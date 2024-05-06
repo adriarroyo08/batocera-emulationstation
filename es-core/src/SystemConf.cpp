@@ -30,11 +30,11 @@ static std::set<std::string> dontRemoveValue
 
 static std::map<std::string, std::string> defaults =
 {
-	{ "kodi.enabled", "1" },
+	{ "kodi.enabled", "0" },
 	{ "kodi.atstartup", "0" },
 	{ "audio.bgmusic", "1" },
 	{ "wifi.enabled", "0" },
-	{ "system.hostname", "BATOCERA" }, // batocera
+	{ "system.hostname", "SAPHIRE" }, // saphire
 	{ "global.retroachievements", "0" },
 	{ "global.retroachievements.hardcore", "0" },
 	{ "global.retroachievements.leaderboards", "0" },
@@ -129,7 +129,7 @@ bool SystemConf::saveSystemConf()
 		filein.close();
 	}
 
-	static std::string removeID = "$^é(p$^mpv$êrpver$^vper$vper$^vper$vper$vper$^vperv^pervncvizn";
+	static std::string removeID = "$^Ã©(p$^mpv$Ãªrpver$^vper$vper$^vper$vper$vper$^vperv^pervncvizn";
 
 	int lastTime = SDL_GetTicks();
 
