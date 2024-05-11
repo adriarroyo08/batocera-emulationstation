@@ -170,7 +170,7 @@ GuiMenu::GuiMenu(Window *window, bool animate) : GuiComponent(window), mMenu(win
 		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::BATOCERASTORE) || ApiSystem::getInstance()->isScriptingSupported(ApiSystem::THEMESDOWNLOADER) ||
 			(ApiSystem::getInstance()->isScriptingSupported(ApiSystem::THEBEZELPROJECT) && ApiSystem::getInstance()->isScriptingSupported(ApiSystem::DECORATIONS)) ||
 			ApiSystem::getInstance()->isScriptingSupported(ApiSystem::UPGRADE))
-			addEntry(_("UPDATES & DOWNLOADS"), true, [this] { openUpdatesSettings(); }, "iconUpdates");
+			//addEntry(_("UPDATES & DOWNLOADS"), true, [this] { openUpdatesSettings(); }, "iconUpdates");
 
 		addEntry(_("SYSTEM SETTINGS").c_str(), true, [this] { openSystemSettings(); }, "iconSystem");
 	}
@@ -3491,7 +3491,7 @@ void GuiMenu::openUISettings()
 	auto theme = ThemeData::getMenuTheme();
 	auto themeSets = ThemeData::getThemeSets();
 	auto system = ViewController::get()->getState().getSystem();
-
+	
 	s->addGroup(_("APPEARANCE"));
 
 	if (system != nullptr && !themeSets.empty())
@@ -3608,6 +3608,8 @@ void GuiMenu::openUISettings()
 	if (Utils::Platform::queryBatteryInformation().hasBattery)
 		s->addOptionList(_("SHOW BATTERY STATUS"), { { _("NO"), "" },{ _("ICON"), "icon" },{ _("ICON AND TEXT"), "text" } }, "ShowBattery", true);
 
+	/////////////////////////////////////////////////////////////////////////////////////////////
+	/*
 	s->addGroup(_("GAMELIST OPTIONS"));
 	s->addSwitch(_("SHOW FAVORITES ON TOP"), "FavoritesFirst", true, [s] { s->setVariable("reloadAll", true); });
 	s->addSwitch(_("SHOW HIDDEN FILES"), "ShowHiddenFiles", true, [s] { s->setVariable("reloadAll", true); });
@@ -3647,7 +3649,8 @@ void GuiMenu::openUISettings()
 			window->pushGui(new GuiMenu(window));
 		}
 	});
-
+	*/
+	/////////////////////////////////////////////////////////////////////////////////////////////
 	mWindow->pushGui(s);
 }
 
@@ -3855,7 +3858,8 @@ void GuiMenu::openQuitMenu_static(Window *window, bool quickAccessMenu, bool ani
 					}, "iconSound");
 			}
 		}
-
+		/////////////////////////////////////////////////////////////////////////////////////////////
+		/*
 		s->addEntry(_("LAUNCH SCREENSAVER"), false, [s, window]
 			{
 				Window* w = window;
@@ -3867,7 +3871,8 @@ void GuiMenu::openQuitMenu_static(Window *window, bool quickAccessMenu, bool ani
 				delete s;
 
 			}, "iconScraper", true);
-
+		*/
+		/////////////////////////////////////////////////////////////////////////////////////////////
 		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::ScriptId::PDFEXTRACTION) && Utils::FileSystem::exists(Paths::getUserManualPath()))
 		{
 			s->addEntry(_("VIEW USER MANUAL"), false, [s, window]
