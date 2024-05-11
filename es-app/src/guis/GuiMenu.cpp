@@ -810,7 +810,7 @@ void GuiMenu::openDeveloperSettings()
 				_("NO"), nullptr));
 		});
 	}
-
+	
 	if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::DISKFORMAT))
 		s->addEntry(_("FORMAT A DISK"), true, [this] { openFormatDriveSettings(); });
 	
@@ -829,7 +829,8 @@ void GuiMenu::openDeveloperSettings()
 			mWindow->closeSplashScreen();
 		}, _("NO"), nullptr));
 	});
-
+	
+	
 	s->addWithDescription(_("RESET GAMELISTS USAGE DATA"), _("Reset values of GameTime, PlayCount and LastPlayed metadatas."), nullptr, [this, s]
 		{
 			mWindow->pushGui(new GuiMsgBox(mWindow, _("ARE YOU SURE?"), _("YES"), [&]
@@ -1156,6 +1157,8 @@ void GuiMenu::openDeveloperSettings()
 	mWindow->pushGui(s);
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////
+/*
 void GuiMenu::openUpdatesSettings()
 {
 	GuiSettings *updateGui = new GuiSettings(mWindow, _("UPDATES & DOWNLOADS").c_str());
@@ -1251,6 +1254,8 @@ void GuiMenu::openUpdatesSettings()
 
 	mWindow->pushGui(updateGui);
 }
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 bool GuiMenu::checkNetwork()
 {
