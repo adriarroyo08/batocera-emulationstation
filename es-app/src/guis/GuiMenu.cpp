@@ -2381,7 +2381,8 @@ void GuiMenu::openGamesSettings()
 	// Netplay
 	if (SystemData::isNetplayActivated() && ApiSystem::getInstance()->isScriptingSupported(ApiSystem::NETPLAY))
 		s->addEntry(_("NETPLAY SETTINGS"), true, [this] { openNetplaySettings(); }, "iconNetplay");
-
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	*/
 	// Missing Bios
 	if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::BIOSINFORMATION))
 	{
@@ -2393,7 +2394,8 @@ void GuiMenu::openGamesSettings()
 		s->addWithLabel(_("CHECK BIOS FILES BEFORE RUNNING A GAME"), checkBiosesAtLaunch);
 		s->addSaveFunc([checkBiosesAtLaunch] { Settings::getInstance()->setBool("CheckBiosesAtLaunch", checkBiosesAtLaunch->getState()); });
 	}
-
+	*/
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
 	// Custom config for systems
 	s->addGroup(_("SAVESTATES"));
 
