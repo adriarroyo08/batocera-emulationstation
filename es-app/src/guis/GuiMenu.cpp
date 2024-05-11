@@ -1420,7 +1420,8 @@ void GuiMenu::openSystemSettings()
 			}
 		}
 	});
-
+////////////////////////////////////////////////////////////////////////////////////////
+/*
 	// KODI SETTINGS
 #ifdef _ENABLE_KODI_
 	if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::KODI))
@@ -1434,7 +1435,8 @@ void GuiMenu::openSystemSettings()
 		});
 	}
 #endif
-
+*/
+////////////////////////////////////////////////////////////////////////////////////////
 #ifdef BATOCERA
 	s->addGroup(_("HARDWARE"));
 #endif
@@ -1615,6 +1617,8 @@ void GuiMenu::openSystemSettings()
 	  }
 	});
 
+	/////////////////////////////////////////////////////////////////////////////////////////
+	/*
 	// splash
 	auto optionsSplash = std::make_shared<OptionListComponent<std::string> >(mWindow, _("BOOT SPLASH"), false);
 
@@ -1646,7 +1650,9 @@ void GuiMenu::openSystemSettings()
 	    }
 	    SystemConf::getInstance()->saveSystemConf();
 	  }
-	});	
+	});
+ 	*/
+	////////////////////////////////////////////////////////////////////////////
 #else
 	if (!ApiSystem::getInstance()->isScriptingSupported(ApiSystem::GAMESETTINGS))
 	{
