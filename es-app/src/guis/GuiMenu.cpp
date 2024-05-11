@@ -1839,7 +1839,8 @@ void GuiMenu::openSystemSettings()
 			}
 		});
 	}
-
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/*
 	// backup
 	if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::BACKUP))
 		s->addEntry(_("BACKUP USER DATA"), true, [this] { mWindow->pushGui(new GuiBackupStart(mWindow)); });
@@ -1911,7 +1912,8 @@ void GuiMenu::openSystemSettings()
 			window->pushGui(new GuiMenu(window, false));
 		}
 	});
-
+ /*
+/////////////////////////////////////////////////////////////////////////////////
 	mWindow->pushGui(s);
 }
 
